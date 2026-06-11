@@ -1,0 +1,19 @@
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# System
+desktop.ini
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+.sixth/
