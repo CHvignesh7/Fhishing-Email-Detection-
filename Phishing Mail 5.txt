@@ -1,0 +1,32 @@
+Subject: Immediate Action Required - Account Locked
+
+Dear Customer,
+
+Your online banking account has been temporarily locked following multiple unsuccessful login attempts. As a security measure, we have restricted access to your account until verification is completed.
+
+Our records indicate that your account information may have been accessed from an unfamiliar device or location. To prevent fraudulent transactions, we require you to confirm your identity immediately.
+
+Please verify:
+
+- Internet Banking Username
+- Login Password
+- Debit Card Number
+- CVV Number
+- Registered Mobile Number
+- One-Time Password (OTP)
+
+Complete the verification process using the secure banking portal below:
+
+http://bank-account-verification-security.com
+
+Failure to verify your account within 12 hours may result in:
+
+- Permanent account suspension
+- Transaction restrictions
+- Delayed fund transfers
+- Closure of online banking access
+
+Thank you for your prompt attention.
+
+Customer Security Department
+Online Banking Division

@@ -17,3 +17,9 @@ Thumbs.db
 .vscode/
 .idea/
 .sixth/
+
+# Large ML Files (local training only, not needed for API)
+backend/model.keras
+backend/tokenizer.pkl
+backend/label_encoder.pkl
+backend/Phishing_Email.csv

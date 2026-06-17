@@ -1,0 +1,34 @@
+Subject: Urgent Security Verification Required
+
+Dear Valued Customer,
+
+We recently detected suspicious login attempts on your account from multiple unknown locations. To ensure the safety of your account and prevent unauthorized access, we have temporarily restricted certain account features.
+
+Our security monitoring team has identified unusual activity that may indicate your account credentials have been compromised. Immediate action is required to prevent permanent suspension of your account.
+
+Please verify the following information within the next 24 hours:
+
+- Full Name
+- Username
+- Password
+- Registered Mobile Number
+- One-Time Password (OTP)
+- Bank Account Information
+
+Failure to complete the verification process within the specified time period may result in:
+
+- Permanent account suspension
+- Loss of access to your account
+- Deletion of account data
+- Cancellation of active services
+
+To restore full account functionality, please click the secure verification link below:
+
+http://secure-account-verification-update.com
+
+After completing verification, your account will automatically be restored and all restrictions will be removed.
+
+Thank you for your cooperation.
+
+Security Operations Center
+Customer Verification Department

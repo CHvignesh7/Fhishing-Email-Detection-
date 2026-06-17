@@ -1,0 +1,10 @@
+Subject: Account Verification Required
+
+Dear User,
+
+Your account has been suspended. Click the link below and verify your login credentials immediately to restore access.
+
+http://verify-account-now.com
+
+Regards,
+Support Team

@@ -1,29 +1,13 @@
-# pyrefly: ignore [missing-import]
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from tensorflow.keras.models import load_model
-# pyrefly: ignore [missing-import]
-from tensorflow.keras.preprocessing.sequence import pad_sequences
-
 import pickle
 import re
 
 # ==========================================
-# Load Model
+# Load Model Pipeline
 # ==========================================
-model = load_model("model.keras")
-
-# ==========================================
-# Load Tokenizer
-# ==========================================
-with open("tokenizer.pkl", "rb") as f:
-    tokenizer = pickle.load(f)
-
-# ==========================================
-# Load Label Encoder
-# ==========================================
-with open("label_encoder.pkl", "rb") as f:
-    label_encoder = pickle.load(f)
+with open("phishing_model.pkl", "rb") as f:
+    model = pickle.load(f)
 
 # ==========================================
 # Flask App
@@ -31,13 +15,12 @@ with open("label_encoder.pkl", "rb") as f:
 app = Flask(__name__)
 CORS(app)  # Allow cross-origin requests from the React frontend
 
-MAX_LEN = 150
-
 # ==========================================
 # Text Cleaning Function
 # ==========================================
 def preprocess_text(text):
-
+    if not isinstance(text, str):
+        return ""
     # Remove URLs
     text = re.sub(r"http\S+", "", text)
 
@@ -57,33 +40,11 @@ def preprocess_text(text):
 # Prediction Function
 # ==========================================
 def predict_email(email_text):
-
     # Clean text
     email_text = preprocess_text(email_text)
 
-    # Tokenize
-    sequence = tokenizer.texts_to_sequences([email_text])
-
-    # Padding
-    padded_sequence = pad_sequences(
-        sequence,
-        maxlen=MAX_LEN,
-        padding="post"
-    )
-
-    # Predict
-    probability = float(
-        model.predict(
-            padded_sequence,
-            verbose=0
-        )[0][0]
-    )
-
-    prediction = 1 if probability > 0.5 else 0
-
-    label = label_encoder.inverse_transform(
-        [prediction]
-    )[0]
+    # Predict using the loaded scikit-learn pipeline
+    label = model.predict([email_text])[0]
 
     return label
 
@@ -101,9 +62,7 @@ def home():
 # ==========================================
 @app.route("/predict", methods=["POST"])
 def predict():
-
     try:
-
         data = request.get_json()
 
         if not data or "email" not in data:
@@ -118,7 +77,6 @@ def predict():
         })
 
     except Exception as e:
-
         return jsonify({
             "error": str(e)
         }), 500
